@@ -1,11 +1,11 @@
-import { Outlet, Link } from "react-router-dom";
-import logo from "./assets/icons/events.svg";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
 
 const Layout = () => {
   console.log("Layout");
   return (
     <div>
-      <div>Nav Bar</div>
+      <NavBar />
       <Outlet />
     </div>
   );

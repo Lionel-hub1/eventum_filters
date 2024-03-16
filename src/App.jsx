@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<h1>Home</h1>} />
           <Route path="space/:id" element={<h1>Spaces</h1>} />
+          <Route path="favorites" element={<h1>Favorites</h1>} />
         </Route>
       </Routes>
     </BrowserRouter>

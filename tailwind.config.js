@@ -12,6 +12,7 @@ export default {
         secondary: "#E86464",
         secondaryDark: "#D2555D",
         tertiary: "#DEE1E9",
+        background: "#F7F8FA",
       }
     },
   },
