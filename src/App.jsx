@@ -1,15 +1,17 @@
-import Layout from "./Layout";
-import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import Space from "./pages/Space";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<h1>Home</h1>} />
-          <Route path="space/:id" element={<h1>Spaces</h1>} />
-          <Route path="favorites" element={<h1>Favorites</h1>} />
+          <Route index element={<Home />} />
+          <Route path="space/:id" element={<Space />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
       </Routes>
     </BrowserRouter>

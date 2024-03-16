@@ -13,6 +13,8 @@ export default {
         secondaryDark: "#D2555D",
         tertiary: "#DEE1E9",
         background: "#F7F8FA",
+        headText: "#1F2937",
+        bodyText: "#6B7280",
       }
     },
   },
