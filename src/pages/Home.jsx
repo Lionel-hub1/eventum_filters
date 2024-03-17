@@ -150,7 +150,29 @@ const Home = () => {
         </form>
         {/* Div for Filters ends here */}
         {/* Div for Results starts here */}
-        
+        <div className="flex flex-col">
+          <hr />
+          <div>
+            <h1 className="text-headText">3 Results</h1>
+          </div>
+          <div className="flex justify-between items-center h-12">
+            <button className="border border-secondary text-secondaryDark px-4 py-1 font-bold">
+              More search options
+            </button>
+            <div className="flex space-x-2 items-center">
+              <p className="text-bodyText">Change to:</p>
+              <button className="text-secondaryDark hover:underline">
+                Cheapest first
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-tertiary h-60 w-full"></div>
+            <div className="bg-tertiary h-60 w-full"></div>
+            <div className="bg-tertiary h-60 w-full"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
