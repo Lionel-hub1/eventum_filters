@@ -8,9 +8,9 @@ const spaces = [
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -54,6 +54,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",
@@ -90,9 +91,9 @@ const spaces = [
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -130,6 +131,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",
@@ -166,9 +168,9 @@ const spaces = [
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -206,6 +208,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",
@@ -242,9 +245,9 @@ const spaces = [
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -282,6 +285,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",
@@ -313,14 +317,14 @@ const spaces = [
         id: 5,
         name: "Space 5",
         description: "This is the fifth space",
-        isFavorite: false,
+        isFavorite: true,
         category: "company premises",
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -332,7 +336,7 @@ const spaces = [
             area: "",
         },
         foodAndDrinks: {
-            available: true,
+            available: false,
             alcohol: "Can be enjoyed on site",
             alcoholOffered: "Alcohol is offered through the landlord",
             food: "Can be brought in",
@@ -358,6 +362,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",
@@ -394,9 +399,9 @@ const spaces = [
         location: "Norway",
         price: "46,500",
         images: [
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1612832660890-1a7d9f5e7f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+            "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
             seating: 100,
@@ -434,6 +439,7 @@ const spaces = [
             endingAt: "23:59",
             price: "46,500",
             space: "The whole room",
+            rentingType: "local rent",
             days: [
                 "Monday",
                 "Tuesday",

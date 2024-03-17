@@ -1,4 +1,6 @@
+import EventCard from "../components/EventCard";
 import { ICONS } from "../data/constants";
+import spaces from "../data/spaces";
 
 const Home = () => {
   return (
@@ -6,9 +8,9 @@ const Home = () => {
       <div className="bg-tertiary w-[42%] text-center h-screen sticky top-10 -z-10">
         Map
       </div>
-      <div className="w-[58%] h-[120rem] px-4">
+      <div className="w-[58%] h-[120rem]  bg-background">
         {/* Div for Filters  starts here */}
-        <form className="">
+        <form className="bg-white px-4">
           {/* First Filter for categories */}
           <div className="flex items-center">
             <p className="w-1/4 text-headText font-bold">Category</p>
@@ -150,7 +152,7 @@ const Home = () => {
         </form>
         {/* Div for Filters ends here */}
         {/* Div for Results starts here */}
-        <div className="flex flex-col">
+        <div className="flex flex-col px-4">
           <hr />
           <div>
             <h1 className="text-headText">3 Results</h1>
@@ -168,9 +170,9 @@ const Home = () => {
           </div>
           <hr />
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-tertiary h-60 w-full"></div>
-            <div className="bg-tertiary h-60 w-full"></div>
-            <div className="bg-tertiary h-60 w-full"></div>
+            {spaces.map((space) => (
+              <EventCard key={space.id} eventDetails={space} />
+            ))}
           </div>
         </div>
       </div>

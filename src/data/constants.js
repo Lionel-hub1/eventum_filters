@@ -6,6 +6,8 @@ import calendarIc from "../assets/icons/calendar.svg";
 import drinkIc from "../assets/icons/drink.svg";
 import foodIc from "../assets/icons/food.svg";
 import cateringIc from "../assets/icons/catering.svg";
+import heartOutLineIc from "../assets/icons/heart-outline.svg";
+import heartFilledIc from "../assets/icons/heart-filled.svg";
 
 export const ICONS = {
     conferenceIc,
@@ -16,4 +18,6 @@ export const ICONS = {
     drinkIc,
     foodIc,
     cateringIc,
+    heartOutLineIc,
+    heartFilledIc,
 };
