@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* variables holding my custom colors */
+:root {
+    --primary: #FFD76E;
+    --primaryDark: #FFB96E;
+    --secondary: #E86464;
+    --secondaryDark: #D2555D;
+    --tertiary: #DEE1E9;
+    --background: #f2f2f2;
+    --headText: #1F2937;
+    --bodyText: #6B7280;
+}
 
+/* Scroll bar Customizations */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -14,4 +26,64 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+}
+
+/* range form item customizations */
+input[type="range" i] {
+    /* active color */
+    --c: var(--secondaryDark);
+    /* the gap */
+    --g: 0px;
+    /* line thickness*/
+    --l: 2px;
+    /* thumb size*/
+    --s: 22px;
+    /* needed for Firefox*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* chromium */
+input[type="range" i]::-webkit-slider-thumb {
+    height: var(--s);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--l) inset var(--secondaryDark);
+    border-image: linear-gradient(90deg, var(--c) 50%, var(--tertiary) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range" i]::-webkit-slider-thumb:hover {
+    background: var(--secondaryDark);
+}
+
+input[type="range" i]::-webkit-slider-thumb:active {
+    height: calc(var(--s) + 10px);
+    background: var(--secondaryDark);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: var(--s);
+    width: var(--s);
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--l) inset var(--secondaryDark);
+    border-image: linear-gradient(90deg, var(--c) 50%, var(--tertiary) 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: var(--secondaryDark);
+}
+
+input[type="range"]::-moz-range-thumb:active {
+    height: calc(var(--s) + 10px);
+    background: var(--secondaryDark);
 }
