@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { ICONS } from "../data/constants";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import LikeButton from "./LikeButton";
 
 const EventCard = ({ eventDetails }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -23,12 +23,6 @@ const EventCard = ({ eventDetails }) => {
     return images[currentImageIndex];
   };
 
-  const getIcon = () => {
-    if (eventDetails.isFavorite) {
-      return ICONS.heartFilledIc;
-    }
-    return ICONS.heartOutLineIc;
-  };
   return (
     <div className="group relative max-w-96 h-96 w-full bg-white">
       <div className="relative h-60">
@@ -82,11 +76,7 @@ const EventCard = ({ eventDetails }) => {
           </svg>
         </button>
         <div className="absolute w-full h-full bg-black bg-opacity-15"></div>
-        <img
-          className="absolute top-3 left-3 w-8 h-8 group-hover:w-9 group-hover:h-9"
-          src={getIcon()}
-          alt=""
-        />
+        <LikeButton />
         <span className="absolute top-3 right-3 w-8 h-8 bg-secondary group-hover:bg-primaryDark flex justify-center items-center rounded-full border-2 border-white">
           2
         </span>

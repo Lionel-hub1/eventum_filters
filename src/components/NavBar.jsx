@@ -3,7 +3,7 @@ import { ICONS } from "../data/constants";
 
 const NavBar = () => {
   return (
-    <nav className="flex sticky top-0 items-center justify-between px-4 bg-background shadow-sm">
+    <nav className="z-10 flex sticky top-0 items-center justify-between px-4 bg-background shadow-sm">
       <div className="flex">
         <Link
           to=""

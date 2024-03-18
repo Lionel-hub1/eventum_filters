@@ -151,9 +151,9 @@ const Home = () => {
           </div>
         </form>
         {/* Div for Filters ends here */}
+        <hr />
         {/* Div for Results starts here */}
         <div className="flex flex-col px-4">
-          <hr />
           <div>
             <h1 className="text-headText">3 Results</h1>
           </div>
@@ -175,6 +175,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+        {/* Div for Results ends here */}
       </div>
     </div>
   );
