@@ -18,7 +18,7 @@ const LikeButton = ({isFavorite}) => {
 }
 
 LikeButton.propTypes = {
-  isFavorite: PropTypes.object.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
 };
 
 export default LikeButton;

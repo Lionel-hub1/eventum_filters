@@ -76,7 +76,7 @@ const EventCard = ({ eventDetails }) => {
           </svg>
         </button>
         <div className="absolute w-full h-full bg-black bg-opacity-15"></div>
-        <LikeButton />
+        <LikeButton isFavorite={eventDetails.isFavorite} />
         <span className="absolute top-3 right-3 w-8 h-8 bg-secondary group-hover:bg-primaryDark flex justify-center items-center rounded-full border-2 border-white">
           2
         </span>
