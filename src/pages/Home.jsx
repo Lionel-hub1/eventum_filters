@@ -5,32 +5,13 @@ import { ICONS } from "../data/constants";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
 const Home = () => {
-  const [activeFilters, setActiveFilters] = useState({
-    category: "",
-    participants: 0,
-    budget: 0,
-    date: "",
-    food: {
-      available: true,
-      alcohol: "Can be enjoyed on site",
-      alcoholOffered: true,
-      food: "Can be brought in",
-      foodOffered: true,
-    },
-    arrangement: "",
-  });
-
-  useEffect(() => {
-    console.log(activeFilters);
-  }, [activeFilters]);
-
   const spaces = [
     {
       id: 1,
       name: "Space 1",
       description: "This is the first space",
       isFavorite: false,
-      category: "company premises",
+      category: "meeting premises",
       location: "Norway",
       price: "46,500",
       images: [
@@ -500,25 +481,100 @@ const Home = () => {
       ],
     },
   ];
+  const [valuesFilters, setValuesFilters] = useState({
+    category: "",
+    participants: 0,
+    budget: 0,
+    date: "",
+    food: {
+      available: true,
+      alcohol: "Can be enjoyed on site",
+      alcoholOffered: true,
+      food: "Can be brought in",
+      foodOffered: true,
+    },
+    arrangement: "",
+  });
+
+  const [activeFilter, setActiveFilter] = useState("");
+
+  useEffect(() => {
+    console.log(valuesFilters);
+  }, [valuesFilters]);
+
+  const handleCategoryChange = (category) => {
+    setValuesFilters({
+      ...valuesFilters,
+      category: category,
+    });
+    setActiveFilter("category");
+  };
+
+  const handleParticipantsChange = (participants) => {
+    setValuesFilters({
+      ...valuesFilters,
+      participants: participants,
+    });
+    setActiveFilter("participants");
+  };
+
+  const handleBudgetChange = (budget) => {
+    setValuesFilters({
+      ...valuesFilters,
+      budget: budget,
+    });
+    setActiveFilter("budget");
+  };
+
+  const handleDateChange = (date) => {
+    setValuesFilters({
+      ...valuesFilters,
+      date: date,
+    });
+    setActiveFilter("date");
+  };
+
+  const handleFoodChange = (food) => {
+    setValuesFilters({
+      ...valuesFilters,
+      food: food,
+    });
+    setActiveFilter("food");
+  };
+
+  const handleArrangementChange = (arrangement) => {
+    setValuesFilters({
+      ...valuesFilters,
+      arrangement: arrangement,
+    });
+    setActiveFilter("arrangement");
+  };
 
   const filteredSpaces = spaces.filter((space) => {
-    return (
-      space.category === activeFilters.category ||
-      space.capacity.seating >= activeFilters.participants ||
-      space.prices.price <= activeFilters.budget ||
-      space.foodAndDrinks.available === activeFilters.food.available ||
-      space.foodAndDrinks.alcohol === activeFilters.food.alcohol ||
-      space.foodAndDrinks.alcoholOffered ===
-        activeFilters.food.alcoholOffered ||
-      space.foodAndDrinks.food === activeFilters.food.food ||
-      space.foodAndDrinks.foodOffered === activeFilters.food.foodOffered ||
-      space.rentingType === activeFilters.arrangement
-    );
+    if (activeFilter === "category") {
+      return space.category === valuesFilters.category;
+    } else if (activeFilter === "participants") {
+      return space.capacity.seating <= valuesFilters.participants;
+    } else if (activeFilter === "budget") {
+      return parseInt(space.prices.price) <= parseInt(valuesFilters.budget);
+    } else if (activeFilter === "date") {
+      return space.prices.days.includes(valuesFilters.date);
+    } else if (activeFilter === "food") {
+      return (
+        space.foodAndDrinks.alcohol === valuesFilters.food.alcohol ||
+        space.foodAndDrinks.food === valuesFilters.food.food ||
+        space.foodAndDrinks.foodOffered === valuesFilters.food.foodOffered
+      );
+    } else if (activeFilter === "arrangement") {
+      return space.arrangement === valuesFilters.arrangement;
+    } else {
+      return false;
+    }
   });
 
   return (
-    <div className="flex flex-col sm:flex-row-reverse w-full">
-      <div className="bg-tertiary w-[42vw] text-center h-screen sticky top-10 z-50">
+    <div className="flex flex-col md:flex-row-reverse w-full">
+      <div className="bg-tertiary w-full md:w-[42vw] text-center h-screen md:sticky md:top-10 md:z-50">
         <APIProvider className="z-50" apiKey="">
           <Map
             className="w-full h-full"
@@ -527,7 +583,7 @@ const Home = () => {
           />
         </APIProvider>
       </div>
-      <div className="w-[58vw] h-[120rem]  bg-background">
+      <div className="w-full md:w-[58vw] h-[120rem]  bg-background">
         {/* Div for Filters  starts here */}
         <div className="bg-white px-4">
           {/* First Filter for categories */}
@@ -536,36 +592,28 @@ const Home = () => {
             <div className="flex w-3/4 justify-around text-bodyText py-3">
               <label className="flex flex-col items-center cursor-pointer">
                 <img className="h-9 w-9" src={ICONS.conferenceIc} alt="" />
-                <span>
+                <span className="space-x-2">
                   <input
                     type="radio"
                     name="category"
-                    value={activeFilters.category}
-                    onChange={() => {
-                      setActiveFilters({
-                        ...activeFilters,
-                        category: "company premises",
-                      });
-                    }}
+                    value="company premises"
+                    checked={valuesFilters.category === "company premises"}
+                    onChange={() => handleCategoryChange("company premises")}
                   />
-                  Company premises
+                  <span>Company premises</span>
                 </span>
               </label>
               <label className="flex flex-col items-center cursor-pointer">
                 <img className="h-9 w-9" src={ICONS.meetingIc} alt="" />
-                <span>
+                <span className="space-x-2">
                   <input
                     type="radio"
                     name="category"
-                    value={activeFilters.category}
-                    onChange={() => {
-                      setActiveFilters({
-                        ...activeFilters,
-                        category: "meeting premises",
-                      });
-                    }}
-                  />{" "}
-                  Meeting / conference room
+                    value="meeting premises"
+                    checked={valuesFilters.category === "meeting premises"}
+                    onChange={() => handleCategoryChange("meeting premises")}
+                  />
+                  <span>Meeting / conference room</span>
                 </span>
               </label>
             </div>
@@ -576,19 +624,14 @@ const Home = () => {
               Number of participants
             </p>
             <div className="w-3/4 px-4 py-4 text-bodyText flex flex-col">
-              <p>{`From ${activeFilters.participants} per`}</p>
+              <p>{`From ${valuesFilters.participants} people`}</p>
               <input
                 className="w-full min-h-20"
                 type="range"
                 min="1"
                 max="100"
-                defaultValue={activeFilters.participants}
-                onChange={(e) => {
-                  setActiveFilters({
-                    ...activeFilters,
-                    participants: e.target.value,
-                  });
-                }}
+                value={valuesFilters.participants}
+                onChange={(e) => handleParticipantsChange(e.target.value)}
               />
             </div>
           </div>
@@ -601,19 +644,14 @@ const Home = () => {
               </p>
             </span>
             <div className="w-3/4 px-4 py-4  text-bodyText flex flex-col">
-              <p>Max NOK 156,000</p>
+              <p>{`Max NOK ${valuesFilters.budget}`}</p>
               <input
                 className="w-full min-h-20"
                 type="range"
                 min="1"
                 max="395000"
-                defaultValue={activeFilters.budget}
-                onChange={(e) => {
-                  setActiveFilters({
-                    ...activeFilters,
-                    budget: e.target.value,
-                  });
-                }}
+                value={valuesFilters.budget}
+                onChange={(e) => handleBudgetChange(e.target.value)}
               />
             </div>
           </div>
@@ -636,10 +674,9 @@ const Home = () => {
                   onChange={() => {
                     document.getElementById("selectedDate").innerText =
                       document.getElementById("chooseDate").value;
-                    setActiveFilters({
-                      ...activeFilters,
-                      date: document.getElementById("chooseDate").value,
-                    });
+                    handleDateChange(
+                      document.getElementById("chooseDate").value
+                    );
                   }}
                 />
                 <img className="w-8 h-8" src={ICONS.calendarIc} alt="" />
@@ -658,16 +695,13 @@ const Home = () => {
                     className="mt-1"
                     type="checkbox"
                     name="food"
-                    value={activeFilters.food.available}
-                    onChange={() => {
-                      setActiveFilters({
-                        ...activeFilters,
-                        food: {
-                          ...activeFilters.food,
-                          alcohol: "Can be brought in",
-                        },
-                      });
-                    }}
+                    checked={valuesFilters.food.alcohol === "Can be brought in"}
+                    onChange={() =>
+                      handleFoodChange({
+                        ...valuesFilters.food,
+                        alcohol: "Can be brought in",
+                      })
+                    }
                   />
                   <span>Can be brought in</span>
                 </span>
@@ -679,17 +713,14 @@ const Home = () => {
                     className="mt-1"
                     type="checkbox"
                     name="food"
-                    value={activeFilters.food.food}
-                    onChange={() => {
-                      setActiveFilters({
-                        ...activeFilters,
-                        food: {
-                          ...activeFilters.food,
-                          food: "Can be brought in",
-                          foodOffered: "Food is offered through the landlord",
-                        },
-                      });
-                    }}
+                    checked={valuesFilters.food.food === "Can be brought in"}
+                    onChange={() =>
+                      handleFoodChange({
+                        ...valuesFilters.food,
+                        food: "Can be brought in",
+                        foodOffered: "Food is offered through the landlord",
+                      })
+                    }
                   />
                   <span>Bringing food allowed</span>
                 </span>
@@ -701,17 +732,17 @@ const Home = () => {
                     className="mt-1"
                     type="checkbox"
                     name="food"
-                    value={activeFilters.food.foodOffered}
-                    onChange={() => {
-                      setActiveFilters({
-                        ...activeFilters,
-                        food: {
-                          ...activeFilters.food,
-                          food: "Can be brought in",
-                          foodOffered: "Food is offered through the landlord",
-                        },
-                      });
-                    }}
+                    checked={
+                      valuesFilters.food.foodOffered ===
+                      "Food is offered through the landlord"
+                    }
+                    onChange={() =>
+                      handleFoodChange({
+                        ...valuesFilters.food,
+                        food: "Can be brought in",
+                        foodOffered: "Food is offered through the landlord",
+                      })
+                    }
                   />
                   <span>The landlord offers catering</span>
                 </span>
@@ -726,13 +757,9 @@ const Home = () => {
                 <input
                   type="radio"
                   name="arrangement"
-                  value={activeFilters.arrangement}
-                  onChange={() => {
-                    setActiveFilters({
-                      ...activeFilters,
-                      arrangement: "Corporate Event",
-                    });
-                  }}
+                  value="Corporate Event"
+                  checked={valuesFilters.arrangement === "Corporate Event"}
+                  onChange={() => handleArrangementChange("Corporate Event")}
                 />
                 <span>Corporate Event</span>
               </label>
@@ -740,13 +767,9 @@ const Home = () => {
                 <input
                   type="radio"
                   name="arrangement"
-                  value={activeFilters.arrangement}
-                  onChange={() => {
-                    setActiveFilters({
-                      ...activeFilters,
-                      arrangement: "Wedding",
-                    });
-                  }}
+                  value="Wedding"
+                  checked={valuesFilters.arrangement === "Wedding"}
+                  onChange={() => handleArrangementChange("Wedding")}
                 />
                 <span>Wedding</span>
               </label>
@@ -754,13 +777,9 @@ const Home = () => {
                 <input
                   type="radio"
                   name="arrangement"
-                  value={activeFilters.arrangement}
-                  onChange={() => {
-                    setActiveFilters({
-                      ...activeFilters,
-                      arrangement: "Feast",
-                    });
-                  }}
+                  value="Feast"
+                  checked={valuesFilters.arrangement === "Feast"}
+                  onChange={() => handleArrangementChange("Feast")}
                 />
                 <span>Feast</span>
               </label>
@@ -768,13 +787,9 @@ const Home = () => {
                 <input
                   type="radio"
                   name="arrangement"
-                  value={activeFilters.arrangement}
-                  onChange={() => {
-                    setActiveFilters({
-                      ...activeFilters,
-                      arrangement: "Christmas party",
-                    });
-                  }}
+                  value="Christmas party"
+                  checked={valuesFilters.arrangement === "Christmas party"}
+                  onChange={() => handleArrangementChange("Christmas party")}
                 />
                 <span>Christmas party</span>
               </label>
@@ -800,11 +815,17 @@ const Home = () => {
             </div>
           </div>
           <hr />
-          <div className="grid grid-cols-2 gap-4">
-            {filteredSpaces.map((space) => (
-              <EventCard key={space.id} eventDetails={space} />
-            ))}
-          </div>
+          {filteredSpaces[0] ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+              {filteredSpaces.map((space) => (
+                <EventCard key={space.id} eventDetails={space} />
+              ))}
+            </div>
+          ) : (
+            <p className="w-full text-center mt-10 font-bold text-xl text-headText">
+              No results found
+            </p>
+          )}
         </div>
         {/* Div for Results ends here */}
       </div>
