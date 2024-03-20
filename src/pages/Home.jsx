@@ -88,6 +88,7 @@ const Home = () => {
     <div className="flex flex-col md:flex-row-reverse w-full">
       <div className="bg-tertiary w-full md:w-[42vw] text-center h-screen md:sticky md:top-10 md:z-40">
         <APIProvider className="z-40" apiKey="">
+          {/* Google Maps require API Key, which is given to the billing account only */}
           <Map
             className="w-full h-full"
             defaultCenter={{ lat: -1.9885147, lng: 30.1017755 }}
