@@ -9,3 +9,11 @@ To install the project, you need to clone the [repository](https://github.com/Li
 ```bash
 npm install
 ```
+
+## Usage
+
+To use the project, you need to run the following command inside the project's directory using the terminal:
+
+```bash
+npm run dev
+```
