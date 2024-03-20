@@ -24,7 +24,6 @@ const Home = () => {
     },
     arrangement: "",
   });
-
   const [activeFilter, setActiveFilter] = useState("");
 
   useEffect(() => {
@@ -38,25 +37,25 @@ const Home = () => {
     });
     setActiveFilter(filterName);
   };
-
   const handleCategoryChange = (category) => {
     handleFilterChange("category", category);
   };
-
   const handleParticipantsChange = (participants) => {
     handleFilterChange("participants", participants);
   };
-
   const handleBudgetChange = (budget) => {
     handleFilterChange("budget", budget);
   };
-
   const handleDateChange = (date) => {
     handleFilterChange("date", date);
   };
 
   const handleFoodChange = (food) => {
-    handleFilterChange("food", food);
+    setValuesFilters({
+      ...valuesFilters,
+      food: food,
+    });
+    setActiveFilter("food");
   };
 
   const handleArrangementChange = (arrangement) => {
@@ -165,6 +164,7 @@ const Home = () => {
             <div className="w-3/4 px-4 py-4 text-bodyText flex justify-between">
               <CheckBox
                 value="Bringing food allowed"
+                reference={valuesFilters.food.food}
                 handleChange={() =>
                   handleFoodChange({
                     ...valuesFilters.food,
@@ -177,6 +177,7 @@ const Home = () => {
               />
               <CheckBox
                 value="The landlord offers catering"
+                reference={valuesFilters.food.food}
                 handleChange={() =>
                   handleFoodChange({
                     ...valuesFilters.food,
@@ -189,6 +190,7 @@ const Home = () => {
               />
               <CheckBox
                 value="The landlord offers drinks"
+                reference={valuesFilters.food.food}
                 handleChange={() =>
                   handleFoodChange({
                     ...valuesFilters.food,
@@ -237,7 +239,7 @@ const Home = () => {
         {/* Div for Results starts here */}
         <div className="flex flex-col px-4">
           <div>
-            <h1 className="text-headText">3 Results</h1>
+            <h1 className="text-headText">{filteredSpaces.length} Results</h1>
           </div>
           <div className="flex justify-between items-center h-12">
             <button className="border border-secondary text-secondaryDark px-4 py-1 font-bold">

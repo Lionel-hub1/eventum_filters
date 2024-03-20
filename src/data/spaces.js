@@ -4,7 +4,7 @@ const spaces = [
         name: "Space 1",
         description: "This is the first space",
         isFavorite: false,
-        category: "company premises",
+        category: "meeting premises",
         location: "Norway",
         price: "46,500",
         images: [
@@ -96,7 +96,7 @@ const spaces = [
             "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
-            seating: 100,
+            seating: 400,
             standing: 200,
             roundTable: 150,
             longTable: 120,
@@ -173,7 +173,7 @@ const spaces = [
             "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
-            seating: 100,
+            seating: 300,
             standing: 200,
             roundTable: 150,
             longTable: 120,
@@ -250,7 +250,7 @@ const spaces = [
             "https://images.unsplash.com/photo-1570126646281-5ec88111777f?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         ],
         capacity: {
-            seating: 100,
+            seating: 10,
             standing: 200,
             roundTable: 150,
             longTable: 120,
